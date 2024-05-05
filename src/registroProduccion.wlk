@@ -1,6 +1,6 @@
 object registroProduccion {
 	//registrarse la cantidad de piezas producidas por la máquina en cada día
-    const registroDePieza=[]
+    const registroDePieza=[ 43,18,49,62,33,39]
    method agregarAlRegistro(conPieza){ registroDePieza.add(conPieza) }
    method quitarRegistro(cantPiezas){ registroDePieza.remove(cantPiezas)}
    
@@ -19,10 +19,10 @@ object registroProduccion {
 	method totalProducido(){return registroDePieza.sum()}
 	
 	method ultimoValorDeProduccion(){return registroDePieza.last()}
-	method primerValorDeProduccion() {return registroDePieza.firs()}
+	method primerValorDeProduccion() {return registroDePieza.first()}
 	
 	method cantidadProduccionesMayorALaPrimera(){
-		registroDePieza.count({x=> self.primerValorDeProduccion()<x })
+		return registroDePieza.count({x=> x > self.primerValorDeProduccion()})
 	}
 
 
